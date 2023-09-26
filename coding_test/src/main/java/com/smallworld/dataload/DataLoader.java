@@ -41,17 +41,16 @@ public class DataLoader {
                 beneficiaryTransactions.forEach(transaction -> System.out.println(transaction.toString()));
             });
 
-            // Get and print unsolved issue IDs
             System.out.println("Get Unsolved Issue IDs: " + transactionDataFetcher.getUnsolvedIssueIds() +"\n");
 
-            // Get and print all solved issue messages
             System.out.println("Get Solved Issue Messages: " + transactionDataFetcher.getAllSolvedIssueMessages() +"\n");
             
+            // Get and print top3 transactionsByAmount
             List<Transaction> top3Transactions = transactionDataFetcher.getTop3TransactionsByAmount();
             top3Transactions.forEach(transaction -> System.out.println(transaction.toString()));
 
             // Get and print the top sender
-            System.out.println("\nGet Top Sender: " + transactionDataFetcher.getTopSender());
+            System.out.println("\nGet Top Sender: " + transactionDataFetcher.getTopSender().get());
 			
 		} catch (IOException e) {
 			e.printStackTrace();
